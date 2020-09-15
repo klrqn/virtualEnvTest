@@ -1,0 +1,27 @@
+https://www.dabapps.com/blog/introduction-to-pip-and-virtualenv-python/
+
+
+source env/bin/activate 
+>>> 
+Instead of typing env/bin/python and env/bin/pip every time, we can run a script to activate the environment. This script, which can be executed with source env/bin/activate, simply adjusts a few variables in your shell (temporarily) so that when you type python, you actually get the Python binary inside the virtualenv instead of the global one:
+
+1 which python
+2 /usr/bin/python
+3 source env/bin/activate
+4 which python
+5 /Users/jamie/code/myproject/env/bin/python
+
+now we can run pip install requests 
+instead of
+/env/bin/pip install requests
+
+Recap
+pip is a tool for installing packages from the Python Package Index.
+virtualenv is a tool for creating isolated Python environments containing their own copy of python, pip, and their own place to keep libraries installed from PyPI.
+It's designed to allow you to work on multiple projects with different dependencies at the same time on the same machine.
+You can see instructions for installing it at virtualenv.org.
+After installing it, run virtualenv env to create a new environment inside a directory called env.
+You'll need one of these environments for each of your projects. Make sure you exclude these directories from your version control system.
+To use the versions of python and pip inside the environment, type env/bin/python and env/bin/pip respectively.
+You can "activate" an environment with source env/bin/activate and deactivate one with deactivate. This is entirely optional but might make life a little easier.
+pip and virtualenv are indispensible tools if you're a regular Python user. Both are fairly simple to understand, and we highly recommend getting to grips with them.
